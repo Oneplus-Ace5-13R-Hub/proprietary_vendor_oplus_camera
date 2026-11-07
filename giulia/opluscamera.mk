@@ -9,8 +9,8 @@ PRODUCT_PACKAGES += \
 #    oplus-framework
 
 # Init
-#PRODUCT_PACKAGES += \
-#    init.oplus.camera.rc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.camera_process.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.camera_process.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \

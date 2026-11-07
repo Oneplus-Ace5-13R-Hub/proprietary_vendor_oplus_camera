@@ -1,0 +1,11 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+on post-fs-data
+    # APSFileStorage (libAlgoProcess) persists deferred-job bookkeeping under
+    # /data/system/camera_rus. /data/system is a core system data directory, so
+    # it must be created from a system_ext init script (init domain); vendor
+    # init is not allowed to create entries there.
+    mkdir /data/system/camera_rus 0777 cameraserver cameraserver

@@ -1,0 +1,4 @@
+# APS file storage used by libAlgoProcess (deferred-job bookkeeping) and
+# libcsextimpl (camera framework config). Matches the stock system_ext
+# file_contexts entry.
+/data/system/camera_rus(/.*)?    u:object_r:data_system_camera_rus:s0

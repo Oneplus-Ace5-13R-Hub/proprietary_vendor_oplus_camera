@@ -43,6 +43,14 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.logd.log.load.vendor.qti.camera.provider-service_64.threshold=400000 \
     persist.logd.log.load.vendor.qti.camera.provider-service_64.upper_limit=1500 \
 
+# Deferred capture
+# ro.oplus.* is labelled vendor_camera_prop, and /product/build.prop is loaded
+# from the init domain, which is not allowed to set that property type. Keep
+# these in /vendor so they are applied from the vendor_init context.
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.oplus.camera.defercap.support=1 \
+    ro.oplus.camera.defercap.all.quick.visible.support=1
+
 # Camera
 $(call soong_config_set,camera,target_ships_oplus_cam,true)
 $(call soong_config_set,camera,allow_nonincreasing_timestamps,true)
